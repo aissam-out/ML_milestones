@@ -1,6 +1,6 @@
 # The housing project
 
-## The goal
+## Goal
 Build a model of housing prices in California using the California census data.
 The model should learn from data and be able to predict the median housing price given all the other metrics.
 
