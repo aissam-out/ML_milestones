@@ -4,11 +4,6 @@ import matplotlib.pyplot as plt
 
 housing = pd.read_csv("housing.csv")
 
-#housing.hist(bins=50, figsize=(20,15))
-#plt.show()
-
-#print(housing.head(5))
-
 def split_train_test(data, test_ratio):
     np.random.seed(42)
     shuffled_indices = np.random.permutation(len(data))
@@ -18,6 +13,5 @@ def split_train_test(data, test_ratio):
     return data.iloc[train_indices], data.iloc[test_indices]
 
 def display_scores(scores):
-    #print("scores:", scores)
     print("mean:", scores.mean())
     print("standard deviation:", scores.std())
