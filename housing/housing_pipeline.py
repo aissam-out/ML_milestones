@@ -13,19 +13,6 @@ housingAll = pd.read_csv("housing.csv")
 
 #split the housingAll to train and test set
 train_set, test_set = train_test_split(housingAll, test_size=0.2, random_state=42)
-#train_set, test_set = smfcts.split_train_test(housing, 0.2)
-#copy the training set to work with after
-#housing = train_set.copy()
-#print("We have", len(housing), "train and", len(test_set), "test")
-#print(housing.head(5))
-#print(test_set.head(5))
-
-#plot
-#housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
-#plt.show()
-#housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4, s=housing["population"]/100, label="population", figsize=(10,7), c="median_house_value", cmap=plt.get_cmap("jet"), colorbar=True)
-#plt.legend()
-#plt.show()
 
 #prepare the x and y
 housing = train_set.drop("median_house_value", axis=1)
