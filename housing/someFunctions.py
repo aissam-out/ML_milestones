@@ -2,8 +2,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-housing = pd.read_csv("housing.csv")
-
 def split_train_test(data, test_ratio):
     np.random.seed(42)
     shuffled_indices = np.random.permutation(len(data))
