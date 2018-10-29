@@ -1,5 +1,5 @@
 #Implementation of an easy-to-use NN class with all the functions required to build a DNN.
-#Use these functions to build a DNN for image classificationself.
+#Use these functions to build a DNN for image classification
 
 import numpy as np
 import h5py
