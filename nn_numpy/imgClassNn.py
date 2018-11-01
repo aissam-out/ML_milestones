@@ -11,21 +11,22 @@ from scipy import ndimage
 from dnn_utils import *
 from dnn import *
 
-plt.rcParams['figure.figsize'] = (5.0, 4.0) # set default size of plots
+#pyplot setting
+plt.rcParams['figure.figsize'] = (5.0, 4.0)
 plt.rcParams['image.interpolation'] = 'nearest'
 plt.rcParams['image.cmap'] = 'gray'
 np.random.seed(1)
 
-# Loading the data (cat/non-cat)
+# Loading and preparing the data (cat/non-cat)
 train_dataset = h5py.File('datasets/train_catvnoncat.h5', "r")
-train_x_orig = np.array(train_dataset["train_set_x"][:]) # train set features
-train_y_orig = np.array(train_dataset["train_set_y"][:]) # train set labels
+train_x_orig = np.array(train_dataset["train_set_x"][:])
+train_y_orig = np.array(train_dataset["train_set_y"][:])
 
 test_dataset = h5py.File('datasets/test_catvnoncat.h5', "r")
-test_x_orig = np.array(test_dataset["test_set_x"][:]) # test set features
-test_y_orig = np.array(test_dataset["test_set_y"][:]) # test set labels
+test_x_orig = np.array(test_dataset["test_set_x"][:])
+test_y_orig = np.array(test_dataset["test_set_y"][:])
 
-classes = np.array(test_dataset["list_classes"][:]) # the list of classes
+classes = np.array(test_dataset["list_classes"][:])
 
 train_y = train_y_orig.reshape((1, train_y_orig.shape[0]))
 test_y = test_y_orig.reshape((1, test_y_orig.shape[0]))
@@ -34,6 +35,13 @@ m_train = train_x_orig.shape[0]
 m_test = test_x_orig.shape[0]
 num_px = train_x_orig.shape[1]
 
+#Reshape the training and test examples
+train_x_flatten = train_x_orig.reshape(train_x_orig.shape[0], -1).T
+test_x_flatten = test_x_orig.reshape(test_x_orig.shape[0], -1).T
+train_x = train_x_flatten/255.
+test_x = test_x_flatten/255.
+
+#Helpful information
 print ("Dataset dimensions:")
 print ("Number of training examples: m_train = " + str(m_train))
 print ("Number of testing examples: m_test = " + str(m_test))
@@ -43,20 +51,13 @@ print ("train_set_x shape: " + str(train_x_orig.shape))
 print ("train_set_y shape: " + str(train_y.shape))
 print ("test_set_x shape: " + str(test_x_orig.shape))
 print ("test_set_y shape: " + str(test_y.shape))
-
-# Reshape the training and test examples
-train_x_flatten = train_x_orig.reshape(train_x_orig.shape[0], -1).T
-test_x_flatten = test_x_orig.reshape(test_x_orig.shape[0], -1).T
-train_x = train_x_flatten/255.
-test_x = test_x_flatten/255.
-
 print ("train_x's shape: " + str(train_x.shape))
 print ("test_x's shape: " + str(test_x.shape))
 
 ### CONSTANTS ###
 layers_dims = [12288, 20, 7, 5, 1] #  5-layer model  (12288=64*64*3)
 
-def L_layer_model(X, Y, layers_dims, learning_rate=0.003, num_iterations=5000, print_cost=False): #lr was 0.009
+def L_layer_model(X, Y, layers_dims, learning_rate=0.003, num_iterations=5000, print_cost=False):
     """
     Implements a L-layer neural network: [LINEAR->RELU]*(L-1)->LINEAR->SIGMOID.
 
