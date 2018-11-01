@@ -1,13 +1,11 @@
-#Implementation of an easy-to-use NN class with all the functions required to build a DNN.
 #Use these functions to build a DNN for image classification
-
 import numpy as np
 import h5py
 import matplotlib.pyplot as plt
 from dnn_utils import *
-from unittest import * #code contained testCases instead of unittest
 
-plt.rcParams['figure.figsize'] = (5.0, 4.0) # set default size of plots
+#pyplot setting
+plt.rcParams['figure.figsize'] = (5.0, 4.0)
 plt.rcParams['image.interpolation'] = 'nearest'
 plt.rcParams['image.cmap'] = 'gray'
 np.random.seed(1)
@@ -154,7 +152,7 @@ def linear_backward(dZ, cache):
     m = A_prev.shape[1]
 
     dW = np.dot(dZ, cache[0].T) / m
-    db = np.squeeze(np.sum(dZ, keepdims=True)) / m                              #we removed axis=1 from the sum function
+    db = np.squeeze(np.sum(dZ, keepdims=True)) / m
     dA_prev = np.dot(cache[1].T, dZ)
 
     assert (dA_prev.shape == A_prev.shape)
@@ -185,7 +183,6 @@ def linear_activation_backward(dA, cache, activation):
     elif activation == "sigmoid":
         dZ = sigmoid_backward(dA, activation_cache)
 
-    # Shorten the code
     dA_prev, dW, db = linear_backward(dZ, linear_cache)
 
     return dA_prev, dW, db
@@ -208,7 +205,7 @@ def L_model_backward(AL, Y, caches):
              grads["db" + str(l)] = ...
     """
     grads = {}
-    L = len(caches) # the number of layers
+    L = len(caches)
     m = AL.shape[1]
     Y = Y.reshape(AL.shape) # after this line, Y is the same shape as AL
 
