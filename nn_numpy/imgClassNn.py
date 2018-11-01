@@ -1,5 +1,4 @@
 #Build and apply a deep neural network to supervised learning : cat vs non-cat classification
-
 import time
 import numpy as np
 import h5py
@@ -9,7 +8,7 @@ import scipy
 from PIL import Image
 from scipy import ndimage
 from dnn_utils import *
-from dnn import *
+from dnn_func import *
 
 #pyplot setting
 plt.rcParams['figure.figsize'] = (5.0, 4.0)
