@@ -1,10 +1,10 @@
 import math
 import scipy
 import sklearn
-from dnn2 import *
+from dnn import *
 import numpy as np
 from PIL import Image
-from dnn_utils2 import *
+from dnn_utils import *
 from scipy import ndimage
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_moons
