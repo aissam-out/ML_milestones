@@ -10,8 +10,7 @@ The main goal of sharing these pieces of code here is to bring you with the mile
 
 Please feel free to make any contribution to make it better.
 
-### Content
-
+## Content
 
 - *The housing project* : 
 
