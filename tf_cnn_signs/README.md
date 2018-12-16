@@ -11,7 +11,7 @@ Test set: 120 pictures (64 by 64 pixels) of signs representing numbers from 0 to
 
 
 
-## The model
+## Model
 
 - CONV2D -> RELU -> MAXPOOL -> CONV2D -> RELU -> MAXPOOL -> FLATTEN -> FULLYCONNECTED
 
