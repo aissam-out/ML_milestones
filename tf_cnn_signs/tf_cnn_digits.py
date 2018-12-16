@@ -24,5 +24,5 @@ X_train, Y_train, X_test, Y_test = preprocess_data(X_train_orig, Y_train_orig, X
 # Training the parameters
 parameters = model(X_train, Y_train, X_test, Y_test)
 
-#Train Accuracy: 0.8703704
-#Test Accuracy: 0.7583333
+#Train Accuracy: 0.8898148
+#Test Accuracy: 0.7916667
