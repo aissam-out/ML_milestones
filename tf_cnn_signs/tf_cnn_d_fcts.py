@@ -171,7 +171,7 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.009, num_epochs = 
         plt.ylabel('cost')
         plt.xlabel('iterations (per tens)')
         plt.title("Learning rate =" + str(learning_rate))
-        #plt.savefig('cost.png')
+        plt.savefig('cost.png')
         plt.show()
 
         # save the parameters in a variable
