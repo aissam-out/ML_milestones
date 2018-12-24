@@ -2,7 +2,7 @@
 
 Hi everyone !
 
-You code with Python & You are new to Machine Learning ? YOU ARE WELCOME
+You code with Python & You are new to Machine Learning ? YOU ARE WELCOME TO THE GOLDEN PALACE !!!
 
 This repository contains python implementations of basic as well as advanced Machine Learning projects every machine learning programmer should be familiar with.
 
