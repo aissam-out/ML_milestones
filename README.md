@@ -36,3 +36,13 @@ I used a sub set of the SIGNS dataset : Training set containing 1080 pictures (6
 - *TensorFlow Classification: MNIST digits with CNN and Regression* : 
 
 Build and train a convolutional neural-network (CNN) and a Regression model for classifying MNIST digits dataset
+
+
+- *Understanding CNNs -TensorFlow Digits dataset-*
+
+In this project brings you with the fundamentals to understand how Convolutional Neural Networks work, first by presenting the building bloc functions to implement convolutional and pooling layers from scratch (just with numpy), and then by exposing a stadard and basic fully functioning ConvNet using TensorFlow
+
+
+- *Recurrent Neural Networks - Basics*
+
+In this project, we present a basic implementation of a RNN with LSTM. We used the MNIST dataset and we have achieved a 0.998 training accuracy and 0.992 testing accuracy.
