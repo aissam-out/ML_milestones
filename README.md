@@ -46,3 +46,8 @@ In this project brings you with the fundamentals to understand how Convolutional
 - *Recurrent Neural Networks - Basics*
 
 In this project, we present a basic implementation of a RNN with LSTM. We used the MNIST dataset and we have achieved a 0.998 training accuracy and 0.992 testing accuracy.
+
+
+- *Save and Restore a Model using TensorFlow*
+
+The main purpose of this project is to bring you with a very clear understanding of how Tensorflow models are saved and restored.
