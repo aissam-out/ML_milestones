@@ -51,3 +51,7 @@ In this project, we present a basic implementation of a RNN with LSTM. We used t
 - *Save and Restore a Model using TensorFlow*
 
 The main purpose of this project is to bring you with a very clear understanding of how Tensorflow models are saved and restored.
+
+- *TF_board*
+
+This projet is an initiation to Tensorboard, which is a visualization software that comes with any standard TensorFlow installation in order to make it easier to understand, debug, and optimize TensorFlow programs.
